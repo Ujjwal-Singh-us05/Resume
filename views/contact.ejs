@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+    <style>
+        .contact-icon {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+        .list-group-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="container py-5">
+        <div class="card shadow-lg p-4">
+            <h2 class="text-center mb-4">Contact Me</h2>
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="Phone" class="contact-icon">
+                    <strong>Phone:</strong> <%= user.contact %>
+                </li>
+
+                <li class="list-group-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="contact-icon">
+                    <strong>LinkedIn:</strong>
+                    <a href="<%= user.linkedin %>" target="_blank"><%= user.linkedin %></a>
+                </li>
+
+                <li class="list-group-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="contact-icon">
+                    <strong>LeetCode:</strong>
+                    <a href="<%= user.leetcode %>" target="_blank"><%= user.leetcode %></a>
+                </li>
+
+                <li class="list-group-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="contact-icon">
+                    <strong>Email:</strong>
+                    <a href="mailto:<%= user.email %>"><%= user.email %></a>
+                </li>
+
+                <li class="list-group-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="contact-icon">
+                    <strong>GitHub:</strong>
+                    <a href="<%= user.github %>" target="_blank"><%= user.github %></a>
+                </li>
+
+                <li class="list-group-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Address" class="contact-icon">
+                    <strong>Address:</strong> <%= user.address %>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <%- include('./partials/script') %>
+</body>
+</html>

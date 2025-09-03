@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+
+    <style>
+        .skills-card {
+            max-width: 500px; 
+            margin: auto;   
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="container py-5">
+        <div class="card skills-card shadow p-4">
+            <h2 class="mb-3 text-center">Skills</h2>
+            <ul class="list-group">
+                <% user.skills.forEach(skill => { %>
+                    <li class="list-group-item text-center"><%= skill %></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+
+    <%- include('./partials/script') %>
+
+</body>
+</html>

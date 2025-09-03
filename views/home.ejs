@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-bar input {
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 15px;
+            width: 250px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 30px 40px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 140px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li {
+            background: #e6f7ff;
+            color: #0066cc;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid #00aaff;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .search-bar input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <header>
+        <div class="profile-info">
+            <img src=<%= user.profileImageUrl %> class="profile-img">
+            <h1><%= user.fullName %></h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search projects, skills, and more...">
+        </div>
+    </header>
+
+    <main>
+        <section class="projects">
+            <h2>About</h2>
+            <div class="About">
+                <%= user.about %>
+            </div>
+        </section>
+
+        <aside class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <% user.skills.forEach(skill => { %>
+                    <li><%= skill %></li>
+                <% }) %>
+            </ul>
+        </aside>
+    </main>
+
+    <%- include('./partials/script') %>
+</body>
+</html>
