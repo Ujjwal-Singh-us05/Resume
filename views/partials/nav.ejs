@@ -12,13 +12,13 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/user/skills/<%= user._id %>">Skills</a>
+          <a class="nav-link active" aria-current="page" href="/user/skills/<%= user ? user._id : '' %>">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/user/projects/<%= user._id %>">Projects</a>
+          <a class="nav-link active" aria-current="page" href="/user/projects/<%= user ? user._id : '' %>">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/user/contact/<%= user._id %>">Contact</a>
+          <a class="nav-link active" aria-current="page" href="/user/contact/<%= user ? user._id : ''%>">Contact</a>
         </li>
         
         
