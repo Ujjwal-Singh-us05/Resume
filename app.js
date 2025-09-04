@@ -9,7 +9,14 @@ const User = require("./models/users");
 
 const userRoute = require("./routes/user");
 
-
+// mongoose.connect(process.env.MONGO_URL)
+//   .then(async () => {
+//     console.log("Connected to DB:", mongoose.connection.name);
+//     const collections = await mongoose.connection.db.listCollections().toArray();
+//     console.log("Collections:", collections.map(c => c.name));
+//     process.exit();
+//   })
+//   .catch(err => console.error(err));
 
 
 mongoose
