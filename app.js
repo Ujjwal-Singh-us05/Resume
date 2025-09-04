@@ -35,7 +35,7 @@ app.use("/user", userRoute);
 
 
 app.get("/health", async (req, res) =>{
-    return res.status(200);
+    return res.status(200).send("Health OK");
 })
 
 app.get("/", async (req, res)=>{
