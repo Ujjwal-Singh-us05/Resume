@@ -7,7 +7,7 @@ const router = Router();
 
 router.get("/skills/:id",skills);
 
-router.get("/about/:id", about);
+//router.get("/about/:id", about);
 router.get("/projects/:id", projects);
 router.get("/contact/:id", contact);
 

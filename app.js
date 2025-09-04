@@ -32,7 +32,7 @@ app.get("/health", async (req, res) =>{
 })
 
 app.get("/", async (req, res)=>{
-    const user = await User.findById("68b84766cc1ae973d3e61014");
+    const user = await User.findById({_id:"68b84766cc1ae973d3e61014"});
     res.render("home",{
         user
     });
