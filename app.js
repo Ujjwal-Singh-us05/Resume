@@ -32,7 +32,7 @@ app.get("/health", async (req, res) =>{
 })
 
 app.get("/", async (req, res)=>{
-    const user = await User.findById({_id:"68b84766cc1ae973d3e61014"});
+    const user = await User.findOne({email:"ujjwalsingh.us05@gmail.com"});
     res.render("home",{
         user
     });
