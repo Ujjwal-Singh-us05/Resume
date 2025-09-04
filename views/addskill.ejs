@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+
+    <style>
+        .skills-card {
+            max-width: 500px; 
+            margin: auto;   
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="container py-5">
+    <div class="card skills-card shadow p-4">
+      <h2 class="mb-3 text-center">Add a Skill</h2>
+      
+      <form action="/user/createskill/<%= user.id %>" method="POST">
+        <div class="mb-3">
+          <label for="skillName" class="form-label">Skill Name</label>
+          <input type="text" id="skillName" name="skillName" class="form-control" placeholder="Enter skill" required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+      
+    </div>
+
+    <%- include('./partials/script') %>
+
+</body>
+</html>

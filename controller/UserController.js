@@ -78,5 +78,22 @@ const about = async (req, res) => {
         console.log(error);
     }
 };
+const addskill = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const user = await User.findById({_id:id});
+        const {skillName} = req.body;
+        if(!skillName){
+            return res.status(400).send({
+                message:" Skill Name is required"
+            });
+        }
+        user.skills.push(skillName); 
+        await user.save();    
+        res.redirect(`/user/skills/${id}`);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-module.exports = {createUser, skills, projects, contact, about}
+module.exports = {createUser, skills, projects, contact, about, addskill}
