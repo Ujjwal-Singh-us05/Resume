@@ -1,6 +1,7 @@
 # Resume
 Working link of this project: https://resume-89gp.onrender.com
 Resume link: https://drive.google.com/file/d/12monoqmjdzLgiYOvVJppN2noo086ilO4/view?usp=sharing
+Postman file link: https://www.postman.com/ujjwalsingh-us05-4266681/workspace/portfolio-api/collection/48193096-4ccc91cd-bc5d-4d74-8b3d-05d20ac92ce8?action=share&source=copy-link&creator=48193096 
 Architecture
   Frontend:
   EJS templates with Bootstrap for styling.
